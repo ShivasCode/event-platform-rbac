@@ -1,8 +1,9 @@
 from django.urls import path 
-from .views import GroupsRoleListView, RoleCreateView, RoleListView, GroupWithRolesListView
+from .views import GroupsRoleListView, RoleCreateView, RoleListView, GroupWithRolesListView, RoleUpdateView
 
 urlpatterns = [
     path('role/create/', RoleCreateView.as_view()),
+    path('role/update/<int:pk>/', RoleUpdateView.as_view()),
     path('role/list/', RoleListView.as_view()),
     path('group-roles/', GroupsRoleListView.as_view()),
     path('groups-with-roles/', GroupWithRolesListView.as_view(), name='group-list'),
