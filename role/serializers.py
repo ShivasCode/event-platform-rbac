@@ -14,8 +14,13 @@ class BaseRoleSerializer(serializers.ModelSerializer):
 
 
 class RoleGetSerializer(BaseRoleSerializer):
-    permissions = PermissionSerializer(many=True)
+    permissions = PermissionSerializer(many=True, read_only=True)
     groups = GroupSerializer()
+
+    class Meta:
+        model = Role
+        fields = ('id', 'name', 'permissions', 'groups')
+
 
 class RoleCreateSerializer(serializers.ModelSerializer):
     permissions = serializers.ListField(write_only=True, required=False)
