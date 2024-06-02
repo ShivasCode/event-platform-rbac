@@ -65,6 +65,9 @@ class GroupWithRolesListView(generics.ListAPIView):
     queryset = Groups.objects.all()
     serializer_class = GroupWithRolesSerializer
 
+
+
+
 # class UserRoleListCreateView(generics.ListCreateAPIView):
 #     queryset = UserRole.objects.all()
 #     serializer_class = UserRoleSerializer
@@ -75,3 +78,4 @@ class GroupWithRolesListView(generics.ListAPIView):
 
 # user = UserRole.objects.get(id=1)
 # user.delete()
+
